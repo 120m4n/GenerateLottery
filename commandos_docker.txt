@@ -1,0 +1,1 @@
+docker build --platform linux/x86-64 -t 120m4n/lottery_web:v1 .

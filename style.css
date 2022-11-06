@@ -34,7 +34,6 @@ body{
     background: #fff;
     position: relative;
     margin: 0 auto;
-    padding: 0.8rem;
     overflow: hidden;
     display: flex;
     flex-flow: row wrap;
@@ -49,6 +48,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
     text-shadow: 0 1px 0 #fff;
+    min-width: 220px;
 }
 .lotteryNumber{
     font-size: 2em;
@@ -110,3 +110,19 @@ h1 {
        -1px 1px 0 #000,
         1px 1px 0 #000;
  }
+
+/* Mediaquery */
+@media screen and (max-width: 600px) {
+    h1{
+        font-size: 3em;
+    }
+    /* #generatorKey{
+        width: 100%;
+    } */
+    #container{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+}
