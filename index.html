@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./lottery.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 >
+        <span class="gradient-text">'El Gordo'</span>
+        <span>de la loteria</span>
+    </h1>
+
+    <form id="generatorKey">
+        <b>Generar Desde:</b>
+        <input type="text" 
+                id="seed"
+                onkeypress="return onlyNumberKey(event)" 
+                maxlength="11" 
+                size="50%" />
+        <button type="button"
+        onclick="processValue()">Generar</button>
+    </form>
+    <div id="container"></div>
+
+    <button onclick="showContent(getRandomNumber(6).toString())">Numero Aleatorio</button>
+    <template id="template">
+        <div class="card">
+            <h2>Semilla: <span class="seed"></span></h2>
+            <h3>Numero: <span class="lotteryNumber"></span></h3>
+        </div>
+    </template>
+
+    <script src="./index.js" defer></script>
+    
+</body>
+</html>

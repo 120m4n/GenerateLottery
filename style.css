@@ -1,0 +1,112 @@
+:root {
+    /* CSS HEX */
+    --kelly-green: #2BBD01ff;
+    --pullman-brown-ups-brown: #503100ff;
+    --steel-blue: #06C8FDff;
+    --dark-blue-gray: #007BFEff;
+    --sunglow: #ffd00081;
+    --rose-pink: #F455BBff;
+    --pale-silver: #C9C9C9ff;
+    --pale-silver-2: #E5E5E5ff;
+        --pale-silver-3: #F2F2F2ff;
+}
+
+body{
+    background-color: var(--pale-silver-3);
+    box-sizing: border-box;
+}
+#generatorKey{
+    background-color: var(--pale-silver-2);
+    border: 1px solid var(--pale-silver);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--pale-silver);
+    color: var(--pullman-brown-ups-brown);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+}
+#container{
+    width: 100%;
+    background: #fff;
+    position: relative;
+    margin: 0 auto;
+    padding: 0.8rem;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card{
+    padding: 1rem;
+    margin: 0.5rem;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-shadow: 0 1px 0 #fff;
+}
+.lotteryNumber{
+    font-size: 2em;
+    font-weight: 700;
+    color: #FD8D01;
+    text-align: center;
+    /* text-shadow: #FD8D01 0 0 5px; */
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(./bubble-boom-graffiti-font/Bubble\ Boom.ttf);
+}
+
+h1 {
+    font-family: myFirstFont;
+    font-size: 6em;
+    text-align: center;
+
+}
+
+.gradient-text {
+    background: -webkit-linear-gradient(#FFD100, #FD8D01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue {
+    /* Fallback: Set a background color. */
+    /* background-color: var(--pale-silver-3); */
+    /* Create the gradient. */
+    background-image: linear-gradient(4deg, #FFD100, #FD8D01);
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+
+
+   /* @supports (-webkit-text-stroke: 2px black) {
+    h1 {
+      -webkit-text-stroke: 2px black;
+    }
+  }  */
+
+  h1 :not(span) {
+    -webkit-text-stroke: 1px black;
+    color: white;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+ }
