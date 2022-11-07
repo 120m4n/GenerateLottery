@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500;600;700&display=swap');
+
 :root {
     /* CSS HEX */
     --kelly-green: #2BBD01ff;
@@ -16,6 +19,7 @@
 body{
     background-color: #eac15a4d;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 #generatorKey{
     background-color: var(--pale-silver-2);
@@ -58,7 +62,8 @@ body{
     font-weight: 700;
     color: #FD8D01;
     text-align: center;
-    /* text-shadow: #FD8D01 0 0 5px; */
+    text-shadow: #ccc 3px 3px 1px;
+    font-family: 'Dosis', sans-serif;
 }
 
 @font-face {
@@ -155,14 +160,25 @@ h1 {
         transform: translate(-50%, -50%);
     }	
 
+    h3{
+        font-size: 1em;
+    }
+
 /* Mediaquery */
 @media screen and (max-width: 600px) {
     h1{
         font-size: 3em;
     }
-    /* #generatorKey{
-        width: 100%;
-    } */
+    h3{
+        font-size: 1.5em;
+    }
+    .lotteryNumber{
+        font-size: 2em;
+        font-weight: 700;
+        color: #FD8D01;
+        text-align: center;
+        text-shadow: #ccc 4px 3px 1px;
+    }
     #container{
         width: 100%;
     }
