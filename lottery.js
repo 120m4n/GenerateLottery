@@ -54,6 +54,11 @@ function reduceDuplas(duplas) {
     return reduced;
 }
 
+// reduce a array of duplas to the multiply of the duplas digits
+function reduceDuplasMultiply(duplas) {
+    const reduced = duplas.map((x) => (x[0] * x[1]) % 10);
+    return reduced;
+}
 
 
 
@@ -68,7 +73,15 @@ function reduceToSix(string_number) {
     return s;
 }
 
-//console.log(reduceToSix(55124));
+function reduceToSixMultiply(string_number) {
+    //const digits = convertToDigits2(string_number);
+    const duplas = slideLeft(string_number);
+    const reduced = reduceDuplasMultiply(duplas);
+    const s = reduced.join("");
+    //const n1 = parseInt(s);
+    //console.log(s);
+    return s;
+}
 
 // for loop to reduce a number to a six digit number
 function reduceToSixLoop(n) {
@@ -89,6 +102,19 @@ function reduceToSixArray(n) {
     final = n.length - 1;
     for (let i = 0; i < final; i++) {
         n1 = reduceToSix(n1);
+        a.push(n1);
+    }
+    return a;
+}
+
+// store in array the reduceToSixMultiply result
+function reduceToSixMultiplyArray(n) {
+    //console.log(n);
+    const a = [];
+    let n1 = n;
+    final = n.length - 1;
+    for (let i = 0; i < final; i++) {
+        n1 = reduceToSixMultiply(n1);
         a.push(n1);
     }
     return a;
@@ -135,10 +161,9 @@ function calculateEquis(x) {
     nleft = (Math.floor(parseInt(x[final - 1])/10) + parseInt(x[final]))%10;
     nbotton = (nleft + nrigth)%10;
 
-    //console.log('   '+ntop+'   ');
-    // print in format 'nleft ----- nrigth'
-    ///console.log(nleft + ' ---- ' + nrigth)
-    //console.log('   '+nbotton+'    ');//
+    console.log('   '+ntop+'   ');
+    console.log(nleft + ' ---- ' + nrigth)
+    console.log('   '+nbotton+'    ');//
 
     //console.log('---lottery---');
     //console.log(reduceEquis(ntop, nleft, nrigth, nbotton));
@@ -147,6 +172,8 @@ function calculateEquis(x) {
     // print another result
     //console.log(top.toString()+nbotton.toString()+left.toString()+right.toString());
 }
+
+
 
 // reduce the Equis number to a four digit number
 function reduceEquis(top, left, right, bottom) {

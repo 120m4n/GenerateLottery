@@ -19,6 +19,7 @@ function showContent(seed) {
     var clon = temp.content.cloneNode(true);
     if (seed) {
         lottery = calculateEquis(reduceToSixArray(seed));
+        //console.log('multiply: ',calculateEquis(reduceToSixMultiplyArray(seed)));
         clon.querySelector('.lotteryNumber').innerText = lottery;
         clon.querySelector('.seed').innerText = seed;
     }
@@ -41,15 +42,15 @@ const setDate = function () {
 const setPrimarySeed = function () {
     let todayDate = new Date().toLocaleDateString('es-ES', {day: '2-digit', month: '2-digit', year: 'numeric'});
     console.log(todayDate);
-    // eliminate '-' or '/' from date
-    todayDate = todayDate.replace(/-/g, '');
-    todayDate = todayDate.replace(/\//g, '');
-    primarySeed = todayDate
+    primarySeed = cleanDate(todayDate);
     showContent(primarySeed);
 }
 
 // clean date format
 function cleanDate(date) {
+    // eliminate '.' or spaces from date
+    date = date.replace(/\./g, '');
+    date = date.replace(/\s/g, '');
     date = date.replace(/-/g, '');
     date = date.replace(/\//g, '');
     return date;
@@ -104,6 +105,15 @@ function lotteryNumber(seed) {
     let lottery = calculateEquis(reduceToSixArray(seed));
     return lottery;
 }
+
+// closeCard
+function closeCard(thisCard) {
+
+    let card = thisCard.parentElement;
+    card.remove();
+}
+
+
 
 
 

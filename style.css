@@ -49,6 +49,7 @@ body{
     border-radius: 5px;
     text-shadow: 0 1px 0 #fff;
     min-width: 220px;
+    position: relative;
 }
 .lotteryNumber{
     font-size: 2em;
@@ -110,6 +111,21 @@ h1 {
        -1px 1px 0 #000,
         1px 1px 0 #000;
  }
+
+ .close {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .3;
+    cursor: pointer;
+    transition: opacity .25s ease-in-out;
+}
 
 /* Mediaquery */
 @media screen and (max-width: 600px) {

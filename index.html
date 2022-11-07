@@ -28,6 +28,8 @@
     <button onclick="showContent(getRandomNumber(6).toString())">Numero Aleatorio</button>
     <template id="template">
         <div class="card">
+            <!-- close button -->
+            <button class="close" onclick="closeCard(this)">X</button>
             <h2>Semilla: <span class="seed"></span></h2>
             <h3>Numero: <span class="lotteryNumber"></span></h3>
         </div>
