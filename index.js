@@ -20,10 +20,7 @@ function showContent(seed) {
     if (seed) {
         lottery = calculateEquis(reduceToSixArray(seed));
         let values = calculateEquisValues(reduceToSixArray(seed));
-        setInnerTextToElement(clon.querySelector('.divTop'), values[0]);
-        setInnerTextToElement(clon.querySelector('.divLeft'), values[1]);
-        setInnerTextToElement(clon.querySelector('.divRight'), values[2]);
-        setInnerTextToElement(clon.querySelector('.divBottom'), values[3]);
+        setIconBackground(clon,values);
 
         clon.querySelector('.lotteryNumber').innerText = lottery;
         clon.querySelector('.seed').innerText = seed;
@@ -32,8 +29,37 @@ function showContent(seed) {
 }
 
 const setInnerTextToElement = function (element, text) {
-    element.innerText = text;
+    element.innerHTML = `<span>${text}</span>`;
 };  
+
+// set background image to element
+function setBackgroundImage(element, image) {
+
+    element.style.backgroundImage = `url(${image})`;
+    element.style.backgroundSize = 'cover';
+}
+
+function setIconBackground(element,values) {
+
+    setBackgroundImage(
+      element.querySelector(".divTop"),
+      `./images/star_${values[0]}.png`
+    );
+    setBackgroundImage(
+        element.querySelector(".divLeft"),
+        `./images/star_${values[1]}.png`
+    );
+    setBackgroundImage(
+        element.querySelector(".divRight"),
+        `./images/star_${values[2]}.png`
+    );
+
+    setBackgroundImage(
+        element.querySelector(".divBottom"),
+        `./images/star_${values[3]}.png`
+    );
+
+}	
 
 // given a integer n value return a random number of length n
 const getRandomNumber = function (n) {
@@ -42,14 +68,22 @@ const getRandomNumber = function (n) {
 
 
 const setDate = function () {
-    let todayDate = new Date().toLocaleDateString('es-ES', {day: '2-digit', month: '2-digit', year: 'numeric'});
+    let todayDate = new Date().toLocaleDateString("es-ES", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "2-digit",
+    });
     document.getElementById('todayDate').innerHTML = todayDate;
 }
 
 // set primarySeed from todayDate
 
 const setPrimarySeed = function () {
-    let todayDate = new Date().toLocaleDateString('es-ES', {day: '2-digit', month: '2-digit', year: 'numeric'});
+    let todayDate = new Date().toLocaleDateString("es-ES", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "2-digit",
+    });
     console.log(todayDate);
     primarySeed = cleanDate(todayDate);
     showContent(primarySeed);
