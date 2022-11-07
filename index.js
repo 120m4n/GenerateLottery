@@ -19,12 +19,21 @@ function showContent(seed) {
     var clon = temp.content.cloneNode(true);
     if (seed) {
         lottery = calculateEquis(reduceToSixArray(seed));
-        //console.log('multiply: ',calculateEquis(reduceToSixMultiplyArray(seed)));
+        let values = calculateEquisValues(reduceToSixArray(seed));
+        setInnerTextToElement(clon.querySelector('.divTop'), values[0]);
+        setInnerTextToElement(clon.querySelector('.divLeft'), values[1]);
+        setInnerTextToElement(clon.querySelector('.divRight'), values[2]);
+        setInnerTextToElement(clon.querySelector('.divBottom'), values[3]);
+
         clon.querySelector('.lotteryNumber').innerText = lottery;
         clon.querySelector('.seed').innerText = seed;
     }
     appendElement(clon, parent);
 }
+
+const setInnerTextToElement = function (element, text) {
+    element.innerText = text;
+};  
 
 // given a integer n value return a random number of length n
 const getRandomNumber = function (n) {

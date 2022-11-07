@@ -173,7 +173,17 @@ function calculateEquis(x) {
     //console.log(top.toString()+nbotton.toString()+left.toString()+right.toString());
 }
 
+// return values top, left, right, botton
+function calculateEquisValues(x) {
+    // final index
+    const final = x.length - 1;
+    ntop = parseInt(x[final]);
+    nrigth = (parseInt(x[final -1])%10 + parseInt(x[final]) )%10;
+    nleft = (Math.floor(parseInt(x[final - 1])/10) + parseInt(x[final]))%10;
+    nbotton = (nleft + nrigth)%10;
 
+    return [ntop, nleft, nrigth, nbotton];
+}
 
 // reduce the Equis number to a four digit number
 function reduceEquis(top, left, right, bottom) {
