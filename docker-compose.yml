@@ -1,6 +1,6 @@
 version: '3'
 services:
   web:
-    image: 120m4n/lottery_web:v5
+    image: 120m4n/lottery_web:v6
     ports:
       - "2181:80"

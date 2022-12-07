@@ -1,4 +1,5 @@
 let primarySeed;
+let secondarySeed;
 
 // given a elemente and a parent element, append the element to the parent
 const appendElement = function (element, parent) {
@@ -89,6 +90,27 @@ const setPrimarySeed = function () {
     showContent(primarySeed);
 }
 
+const setSecondarySeed = function () {
+    let todayDate = new Date();
+    console.log(formatDate(todayDate));
+    secondarySeed = formatDate(todayDate);
+    showContent(secondarySeed);
+}
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear() - 2000;
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('');
+}
+
 // clean date format
 function cleanDate(date) {
     // eliminate '.' or spaces from date
@@ -164,6 +186,7 @@ function closeCard(thisCard) {
 window.onload = function () {
     //setDate();
     setPrimarySeed();
+    setSecondarySeed();
 /*     let dates = generateDates();
     let cleanDates = dates.map(cleanDate);
     //console.log(cleanDates);
